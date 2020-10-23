@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "CM3110-GSE1801934"
