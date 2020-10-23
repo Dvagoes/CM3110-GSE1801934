@@ -11,4 +11,8 @@
     <string name="currLoc_default">Aberdeen</string>
     <string name="title_activity_set_location">Map</string>
     <string name="title_activity_live_track">Map</string>
+
+    <string name="confirm">confirm</string>
+    <string name="cancel">cancel</string>
+    <string name="back">back</string>
 </resources>
