@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CM3110-GSE1801934</string>
+    <string name="changeLocLabel">Change Location</string>
+    <string name="nextPassLabel_text">Time of Next Pass</string>
+    <string name="visDesc_default">It will be visible</string>
+    <string name="visDesc_badLight">It will be too light to see</string>
+    <string name="visDesc_badWeather">It will be too cloudy to see </string>
+    <string name="liveTrack_label">Where is the ISS now?</string>
+
+    <string name="nextPassTime_default">00:00</string>
 </resources>
