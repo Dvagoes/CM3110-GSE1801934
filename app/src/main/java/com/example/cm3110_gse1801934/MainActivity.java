@@ -12,6 +12,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -35,6 +36,7 @@ import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
     LatLng latLng;
+    private final String TAG = "main";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,13 +143,6 @@ public class MainActivity extends AppCompatActivity {
         public void onStatusChanged(String provider, int status, Bundle extras) {
         }
 
-        public double getLatitude() {
-            return latitude;
-        }
-
-        public double getLongitude() {
-            return longitude;
-        }
     }
 
     public void setTime() {
@@ -163,19 +158,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 // Display the first 500 characters of the response string.
+                Log.i(TAG, "Response " + response);
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray timeArray = jsonObject.getJSONArray("response");
                     JSONObject timeObject = timeArray.getJSONObject(0);
+                    Log.i(TAG, "Object " + timeObject.getString("risetime"));
                     String text = "";
-                    for (Iterator<String> iterator = timeObject.keys(); iterator.hasNext(); ) {
-                        String id = iterator.next();
-                        LocalTime time = LocalDateTime.ofInstant(
-                                Instant.ofEpochMilli(Long.parseLong(timeObject.getString("risetime"))),
-                                TimeZone.getDefault().toZoneId()
-                        ).toLocalTime();
-                        text = time.getHour() + ":" + time.getMinute();
-                    }
+
+
+                    LocalTime time = LocalDateTime.ofInstant(
+                            Instant.ofEpochMilli(Long.parseLong(timeObject.getString("risetime"))),
+                            TimeZone.getDefault().toZoneId()
+                    ).toLocalTime();
+                    text = time.getHour() + ":" + time.getMinute();
                     TextView textView = findViewById(R.id.nextPassTime);
                     textView.setText(text);
 
