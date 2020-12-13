@@ -6,6 +6,7 @@
     <string name="visDesc_badLight">It will be too light to see</string>
     <string name="visDesc_badWeather">It will be too cloudy to see </string>
     <string name="liveTrack_label">Where is the ISS now?</string>
+    <string name="allTimes_label">View All Times</string>
 
     <string name="nextPassTime_default">00:00</string>
     <string name="currLoc_default">Aberdeen</string>
@@ -15,4 +16,8 @@
     <string name="confirm">confirm</string>
     <string name="cancel">cancel</string>
     <string name="back">back</string>
+
+    <string name="setAlarmLabel">Set Alarm</string>
+    <string name="dateLabel">dd/mm</string>
+    <string name="coordLabel">0.0N, 0.0E</string>
 </resources>
